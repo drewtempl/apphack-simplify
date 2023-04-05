@@ -1,12 +1,14 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+from spotipy import MemoryCacheHandler
 
 
 def get_spotify_obj(scope):
     return spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope, 
                                                client_id='9b0951c26e85405697a1e52e99937b35',
                                                client_secret='b537e7f688ec45189a529da5ed5cdb61',
-                                               redirect_uri='http://localhost:3000'))
+                                               redirect_uri='http://localhost:3000',
+                                               cache_handler=MemoryCacheHandler()))
 
 
 # scope = "user-library-read"
