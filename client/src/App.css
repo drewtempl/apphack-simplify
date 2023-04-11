@@ -38,6 +38,7 @@ body {
   margin: 100px;
   max-width: 75vw;
   min-width: 50vw;
+  gap: 15px;
 }
 
 .list-header {
@@ -46,7 +47,7 @@ body {
   align-items: center;
   height: 30px;
   padding: 25px;
-  background-color: aqua;
+  background-color: rgb(84, 219, 152);
   font-size: large;
   font-weight: 400;
 }
@@ -55,7 +56,7 @@ body {
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .list-wrapper {
@@ -65,11 +66,24 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+}
+
+.list-wrapper img {
+  height: 60px;
+  width: auto;
+}
+
+.list-wrapper ol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .list-item {
   display: flex;
   gap: 30px;
+  align-items: baseline;
 }
 
 .rec-box {
@@ -77,4 +91,10 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 125px;
+}
+
+.create-playlist-wapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

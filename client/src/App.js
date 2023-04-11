@@ -32,12 +32,15 @@ export const App = () => {
       });
   };
 
-  const makePlaylist = () => {
-    fetch(`http://127.0.0.1:5000/make-playlist`)
+  const makePlaylist = (type, timeframe) => {
+    fetch(`http://127.0.0.1:5000/make-playlist/${type}/${timeframe}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        setIsDisabled(true);
+        // console.log(data);
+        if (type === 'recommendation') {
+          setIsDisabled(true);
+        }
+        return data;
       });
   };
 
@@ -54,10 +57,10 @@ export const App = () => {
       )}
       {isLoggedIn && (
         <div className="body-container">
-          <ItemList data={topTracksData} getTopTracks={getTopTracks}></ItemList>
+          <ItemList data={topTracksData} getTopTracks={getTopTracks} makePlaylist={makePlaylist}></ItemList>
           <div className="rec-box">
             <button
-              onClick={() => makePlaylist()}
+              onClick={() => makePlaylist('recommendation', 'medium_term')}
               className="btn btn-primary btn-lg"
               disabled={isDisabled}
             >
