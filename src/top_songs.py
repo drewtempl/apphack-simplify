@@ -7,7 +7,6 @@ from flask import jsonify
 scope = "user-read-email playlist-modify-public user-library-read user-library-modify user-top-read"
 
 sp = get_spotify_obj(scope)
-# print(sp)
 
 
 def get_top_songs(limit, time_range):
